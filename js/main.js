@@ -7,6 +7,7 @@ Vue.component('myFirstComponent', {
     template: `
     <div>
         <h1>Welcome To My First Site</h1>
+        <img src="../img/hi.jpg">
     </div>
     `,
     data: function(){
