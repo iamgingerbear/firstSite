@@ -40,11 +40,28 @@ Vue.component('boxes', {
     }
 }})
 
+Vue.component('list', {
+    template: `
+    <div>
+        <h2>Skills</h2>
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
+    </div>
+    `,
+    data: function(){
+        return {
+            items: ['stuff', 'things', 'more things', 'stuff and things']
+        }
+    }
+})
+
 // the main vue component that will order the other components
 var app = new Vue({
     template: `
     <div class="container">
         <banner></banner>
+        <list></list>
         <boxes></boxes>
     </div>
     `,
@@ -56,43 +73,3 @@ var app = new Vue({
 
     }
 })
-
-// sams mess
-// Vue.component('MowMow', {
-//     template: `
-//     <Header>
-//     <h1>Satan did it</h1>
-//     <img src="https://www.catster.com/wp-content/uploads/2018/05/A-gray-cat-crying-looking-upset.jpg">
-
-// </Header>
-//     `,
-//     data: function(){
-//         return {
-
-//         }
-//     }
-// })
-
-// Vue.component('Bumpkin', {
-//     template: `
-//     <div>
-//     <h2>Portfolio</h2>
-//     <div v-for="item in items">
-//         <h3>{{item.name}}</h3>
-//         <img :src="item.img">
-//         <p>{{item.text}}</p>
-//     </div>
-// </div>
-//     `,
-//     data: function(){
-//         return {
-//             items: {
-//                 'Death':{
-//                     img: "https://pics.me.me/smirnof-its-an-intellectual-mana-potion-for-the-chosen-ones-37617286.png",
-//                     name: "Death",
-//                     text: "Fuck off",
-//                 },
-//             }
-//         }
-//     }
-// })
